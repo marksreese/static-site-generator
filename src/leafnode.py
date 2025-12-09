@@ -13,10 +13,11 @@ class LeafNode(HTMLNode):
         if self.tag is None:
             return self.value
         
-        node_string = ' '.join(f'{key}="{value}"' for key, value in self.props.items()) if self.props else ''
+        node_string = self.props_to_html()
+        
         if node_string == "":
             node_string = f'<{self.tag}>{self.value}</{self.tag}>'
         else:
-            node_string = f'<{self.tag} {node_string}>{self.value}</{self.tag}>'
+            node_string = f'<{self.tag}{node_string}>{self.value}</{self.tag}>'
 
         return node_string
