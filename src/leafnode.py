@@ -3,7 +3,7 @@ from textnode import TextNode
 
 class LeafNode(HTMLNode):
     def __init__(self, tag: str, value: str, props: dict = None): # type: ignore
-        super().__init__(tag=tag, value=value, props=props)
+        super().__init__(tag=tag, value=value, props=props) # type: ignore
 
     def to_html(self) -> str:
         node_string = ""
@@ -23,26 +23,25 @@ class LeafNode(HTMLNode):
 
         return node_string
 
-    def text_node_to_html_node(text_node: 'TextNode') -> LeafNode: # type: ignore
+    def text_node_to_html_node(text_node: 'TextNode'): # type: ignore
         type = text_node.text_type
-        match type:
-            case None:
-                raise Exception("TextNode must have a TextType")
-            case type.PLAIN:
-                return LeafNode(tag="", value=text_node.text) # type: ignore;
-            case type.BOLD:
-                return LeafNode(tag="b", value=text_node.text)
-            case type.ITALIC:
-                return LeafNode(tag="i", value=text_node.text)
-            case type.CODE:
-                return LeafNode(tag="code", value=text_node.text)
-            case type.LINK:
-                if text_node.url is None:
-                    raise Exception("Link TextNode must have a URL")
-                return LeafNode(tag="a", value=text_node.text, props={"href": text_node.url})
-            case type.IMAGE:
-                if text_node.url is None:
-                    raise Exception("Image TextNode must have a URL")
-                return LeafNode(tag="img", value="", props={"src": text_node.url, "alt": text_node.text})
-            case _:
-                raise Exception("Unknown TextType")
+        if type is None:
+            raise Exception("TextNode must have a TextType")
+        elif type == type.PLAIN:
+            return LeafNode(tag="", value=text_node.text)
+        elif type == type.BOLD:
+            return LeafNode(tag="b", value=text_node.text)
+        elif type == type.ITALIC:
+            return LeafNode(tag="i", value=text_node.text)
+        elif type == type.CODE:
+            return LeafNode(tag="code", value=text_node.text)
+        elif type == type.LINK:
+            if text_node.url is None:
+                raise Exception("Link TextNode must have a URL")
+            return LeafNode(tag="a", value=text_node.text, props={"href": text_node.url})
+        elif type == type.IMAGE:
+            if text_node.url is None:
+                raise Exception("Image TextNode must have a URL")
+            return LeafNode(tag="img", value="", props={"src": text_node.url, "alt": text_node.text})
+        else:
+            raise Exception("Unknown TextType")
