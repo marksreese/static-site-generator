@@ -1,7 +1,7 @@
 import unittest
 
 from textnode import TextNode, TextType
-
+from utility import split_nodes_delimiter
 
 class TestTextNode(unittest.TestCase):
     def test_eq(self):
@@ -18,6 +18,39 @@ class TestTextNode(unittest.TestCase):
         self.assertEqual(node.text, "Click here")
         self.assertEqual(node.text_type.value, "link")
         self.assertEqual(node.url, "http://example.com")
+    
+    def test_delimiter_multiline(self):
+        nodes = [
+            TextNode("This is ", TextType.PLAIN),
+            TextNode("*bold*", TextType.PLAIN),
+            TextNode(" and ", TextType.PLAIN),
+            TextNode("*italic*", TextType.PLAIN),
+            TextNode(" text.", TextType.PLAIN),
+        ]
+
+        result = split_nodes_delimiter(nodes, "*", TextType.BOLD)
+
+        expected = [
+            TextNode("This is ", TextType.PLAIN, None),
+            TextNode("bold", TextType.BOLD, None),
+            TextNode(" and ", TextType.PLAIN, None),
+            TextNode("italic", TextType.BOLD, None),
+            TextNode(" text.", TextType.PLAIN, None),
+        ]
+
+        self.assertEqual(result, expected)
+
+    def test_unpaired_delimiter(self):
+        nodes = [
+            TextNode("This is ", TextType.PLAIN),
+            TextNode("*bold and italic", TextType.PLAIN),
+            TextNode(" text.", TextType.PLAIN),
+        ]
+
+        with self.assertRaises(Exception) as context:
+            split_nodes_delimiter(nodes, "*", TextType.BOLD)
+
+        self.assertTrue("Unpaired delimiter found in nodes." in str(context.exception))
 
 if __name__ == "__main__":
     unittest.main()
