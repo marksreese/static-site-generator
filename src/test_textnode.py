@@ -18,6 +18,10 @@ class TestTextNode(unittest.TestCase):
         self.assertEqual(node.text, "Click here")
         self.assertEqual(node.text_type.value, "link")
         self.assertEqual(node.url, "http://example.com")
+
+    # def test_delimiter_singleline(self):
+
+    #     self.assertEqual
     
     def test_delimiter_multiline(self):
         nodes = [

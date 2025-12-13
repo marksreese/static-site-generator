@@ -1,4 +1,5 @@
 from textnode import TextNode, TextType
+import re
 
 def split_nodes_delimiter(nodes, delimiter: str, text_type):
     result = []
@@ -27,3 +28,19 @@ def split_nodes_delimiter(nodes, delimiter: str, text_type):
     if paired is False:
         raise Exception("Unpaired delimiter found in nodes.")
     return result
+
+def extract_markdown_images(text: str):
+    pattern = r"!\[([^\[\]]*)\]\(([^\(\)]*)\)"
+    matches = re.findall(pattern, text)
+    images = []
+    for text, url in matches:
+        images.append((text, url))
+    return images
+
+def extract_markdown_links(text: str):
+    pattern = r"(?<!!)\[([^\[\]]*)\]\(([^\(\)]*)\)"
+    matches = re.findall(pattern, text)
+    links = []
+    for text, url in matches:
+        links.append((text, url))
+    return links
