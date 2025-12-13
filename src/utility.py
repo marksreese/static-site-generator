@@ -44,3 +44,12 @@ def extract_markdown_links(text: str):
     for text, url in matches:
         links.append((text, url))
     return links
+
+def markdown_to_blocks(markdown: str):
+    blocks = markdown.split("\n\n")
+    returned = []
+    for block in blocks:
+        block = block.strip("\n")
+        if block != "\n":
+            returned.append(block)
+    return returned
