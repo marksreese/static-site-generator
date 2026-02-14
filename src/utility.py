@@ -4,10 +4,10 @@ import re
 def split_nodes_delimiter(nodes, delimiter: str, text_type):
     result = []
     current_sublist = []
-    type = TextType.PLAIN
+    type = TextType.TEXT
     paired = True
     for node in nodes:
-        if node.text_type != TextType.PLAIN:
+        if node.text_type != TextType.TEXT:
             result.append(node)
             continue
         chars = list(node.text)
@@ -18,10 +18,10 @@ def split_nodes_delimiter(nodes, delimiter: str, text_type):
                 if len(current_sublist) > 0:
                     result.append(TextNode(''.join(current_sublist), type))
                     current_sublist = []
-                if type == TextType.PLAIN:
+                if type == TextType.TEXT:
                     type = text_type
                 else:
-                    type = TextType.PLAIN
+                    type = TextType.TEXT
                 paired = not paired
     if len(current_sublist) > 0:
         result.append(TextNode(''.join(current_sublist), type))

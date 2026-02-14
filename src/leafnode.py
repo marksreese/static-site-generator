@@ -27,7 +27,7 @@ class LeafNode(HTMLNode):
         type = text_node.text_type
         if type is None:
             raise Exception("TextNode must have a TextType")
-        elif type == type.PLAIN:
+        elif type == type.TEXT:
             return LeafNode(tag="", value=text_node.text)
         elif type == type.BOLD:
             return LeafNode(tag="b", value=text_node.text)
