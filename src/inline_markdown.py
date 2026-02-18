@@ -39,9 +39,10 @@ def extract_markdown_links(text: str):
 
 def markdown_to_blocks(markdown: str):
     blocks = markdown.split("\n\n")
-    returned = []
+    filtered = []
     for block in blocks:
-        block = block.strip("\n")
-        if block != "\n":
-            returned.append(block)
-    return returned
+        if block == "":
+            continue
+        block = block.strip()
+        filtered.append(block)
+    return filtered

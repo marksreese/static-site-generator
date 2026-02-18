@@ -117,17 +117,14 @@ class TestInlineMarkdown(unittest.TestCase):
             TextNode("*italic*", TextType.TEXT),
             TextNode(" text.", TextType.TEXT),
         ]
-
         result = split_nodes_delimiter(nodes, "*", TextType.BOLD)
-
         expected = [
-            TextNode("This is ", TextType.TEXT, None),
-            TextNode("bold", TextType.BOLD, None),
-            TextNode(" and ", TextType.TEXT, None),
-            TextNode("italic", TextType.BOLD, None),
-            TextNode(" text.", TextType.TEXT, None),
+            TextNode("This is ", TextType.TEXT),
+            TextNode("bold", TextType.BOLD),
+            TextNode(" and ", TextType.TEXT),
+            TextNode("italic", TextType.BOLD),
+            TextNode(" text.", TextType.TEXT),
         ]
-
         self.assertEqual(result, expected)
 
     def test_unpaired_delimiter(self):
@@ -136,10 +133,8 @@ class TestInlineMarkdown(unittest.TestCase):
             TextNode("*bold and italic", TextType.TEXT),
             TextNode(" text.", TextType.TEXT),
         ]
-
         with self.assertRaises(Exception) as context:
             split_nodes_delimiter(nodes, "*", TextType.BOLD)
-
         self.assertTrue("Invalid markdown, unclosed section found" in str(context.exception))
 
 class TestExtractMarkdown(unittest.TestCase):
@@ -450,14 +445,14 @@ class TestExtractMarkdown(unittest.TestCase):
 
     def test_extract_blocks_from_markdown(self):
         md = """
-            This is **bolded** paragraph
+This is **bolded** paragraph
 
-            This is another paragraph with _italic_ text and `code` here
-            This is the same paragraph on a new line
+This is another paragraph with _italic_ text and `code` here
+This is the same paragraph on a new line
 
-            - This is a list
-            - with items
-        """
+- This is a list
+- with items
+"""
         blocks = markdown_to_blocks(md)
         self.assertEqual(
             blocks,
