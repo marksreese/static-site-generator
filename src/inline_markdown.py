@@ -38,16 +38,6 @@ def extract_markdown_links(text: str):
         links.append((link_text, url))
     return links
 
-def markdown_to_blocks(markdown: str):
-    blocks = markdown.split("\n\n")
-    filtered = []
-    for block in blocks:
-        if block == "":
-            continue
-        block = block.strip()
-        filtered.append(block)
-    return filtered
-
 def split_nodes_image(old_nodes):
     result = []
     for node in old_nodes:

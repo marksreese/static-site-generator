@@ -1,5 +1,6 @@
 import unittest
 from inline_markdown import *
+from block_markdown import markdown_to_blocks
 from textnode import TextNode, TextType
 
 class TestInlineMarkdown(unittest.TestCase):
