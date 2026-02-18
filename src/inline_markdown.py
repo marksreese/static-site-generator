@@ -1,32 +1,24 @@
 from textnode import TextNode, TextType
 import re
 
-def split_nodes_delimiter(nodes, delimiter: str, text_type):
+def split_nodes_delimiter(old_nodes: list[TextNode], delimiter: str, text_type):
     result = []
-    current_sublist = []
-    type = TextType.TEXT
-    paired = True
-    for node in nodes:
+    for node in old_nodes:
         if node.text_type != TextType.TEXT:
             result.append(node)
             continue
-        chars = list(node.text)
-        for char in chars:
-            if char != delimiter:
-                current_sublist.append(char)
+        current_sublist = []
+        sections = node.text.split(delimiter)
+        if len(sections) % 2 == 0:
+            raise Exception("Invalid markdown, unclosed section found")
+        for i in range(len(sections)):
+            if sections[i] == "":
+                continue
+            if i % 2 == 0:
+                current_sublist.append(TextNode(sections[i], TextType.TEXT))
             else:
-                if len(current_sublist) > 0:
-                    result.append(TextNode(''.join(current_sublist), type))
-                    current_sublist = []
-                if type == TextType.TEXT:
-                    type = text_type
-                else:
-                    type = TextType.TEXT
-                paired = not paired
-    if len(current_sublist) > 0:
-        result.append(TextNode(''.join(current_sublist), type))
-    if paired is False:
-        raise Exception("Unpaired delimiter found in nodes.")
+                current_sublist.append(TextNode(sections[i], text_type))
+        result.extend(current_sublist)
     return result
 
 def extract_markdown_images(text: str):
