@@ -2,7 +2,7 @@ from htmlnode import HTMLNode
 from textnode import TextNode
 
 class LeafNode(HTMLNode):
-    def __init__(self, tag: str, value: str, props: dict = None): # type: ignore
+    def __init__(self, tag: str | none, value: str, props: dict = None): # type: ignore
         super().__init__(tag=tag, value=value, props=props) # type: ignore
 
     def to_html(self) -> str:
