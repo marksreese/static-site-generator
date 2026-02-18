@@ -25,16 +25,17 @@ def extract_markdown_images(text: str):
     pattern = r"!\[([^\[\]]*)\]\(([^\(\)]*)\)"
     matches = re.findall(pattern, text)
     images = []
-    for text, url in matches:
-        images.append((text, url))
+    for img_text, url in matches:
+        images.append((img_text, url))
     return images
 
 def extract_markdown_links(text: str):
+    # pattern ignores leading exclamation marks which indicate images with (?<!!)
     pattern = r"(?<!!)\[([^\[\]]*)\]\(([^\(\)]*)\)"
     matches = re.findall(pattern, text)
     links = []
-    for text, url in matches:
-        links.append((text, url))
+    for link_text, url in matches:
+        links.append((link_text, url))
     return links
 
 def markdown_to_blocks(markdown: str):
@@ -46,3 +47,49 @@ def markdown_to_blocks(markdown: str):
         block = block.strip()
         filtered.append(block)
     return filtered
+
+def split_nodes_image(old_nodes):
+    result = []
+    for node in old_nodes:
+        if node.text_type != TextType.TEXT:
+            result.append(node)
+            continue
+        images = extract_markdown_images(node.text)
+        if len(images) == 0:
+            result.append(node)
+            continue
+        current_sublist = []
+        remaining_text = node.text
+        for text, url in images:
+            split_text = remaining_text.split(f"![{text}]({url})", 1)
+            if split_text[0] != "":
+                current_sublist.append(TextNode(split_text[0], TextType.TEXT))
+            current_sublist.append(TextNode(text, TextType.IMAGE, url))
+            remaining_text = split_text[1]
+        if remaining_text != "":
+            current_sublist.append(TextNode(remaining_text, TextType.TEXT))
+        result.extend(current_sublist)
+    return result
+
+def split_nodes_link(old_nodes):
+    result = []
+    for node in old_nodes:
+        if node.text_type != TextType.TEXT:
+            result.append(node)
+            continue
+        links = extract_markdown_links(node.text)
+        if len(links) == 0:
+            result.append(node)
+            continue
+        current_sublist = []
+        remaining_text = node.text
+        for text, url in links:
+            split_text = remaining_text.split(f"[{text}]({url})", 1)
+            if split_text[0] != "":
+                current_sublist.append(TextNode(split_text[0], TextType.TEXT))
+            current_sublist.append(TextNode(text, TextType.LINK, url))
+            remaining_text = split_text[1]
+        if remaining_text != "":
+            current_sublist.append(TextNode(remaining_text, TextType.TEXT))
+        result.extend(current_sublist)
+    return result
