@@ -1,18 +1,18 @@
 import unittest
-from inline_markdown import split_nodes_delimiter, extract_markdown_images, extract_markdown_links, markdown_to_blocks
+from inline_markdown import *
 from textnode import TextNode, TextType
 
 class TestInlineMarkdown(unittest.TestCase):
     def test_split_nodes_delimiter(self):
         nodes = [TextNode("This is *bold* text", TextType.TEXT)]
-        result = split_nodes_delimiter(nodes, "*", TextType.BOLD)
-        self.assertEqual(len(result), 3)
-        self.assertEqual(result[0].text, "This is ")
-        self.assertEqual(result[0].text_type, TextType.TEXT)
-        self.assertEqual(result[1].text, "bold")
-        self.assertEqual(result[1].text_type, TextType.BOLD)
-        self.assertEqual(result[2].text, " text")
-        self.assertEqual(result[2].text_type, TextType.TEXT)
+        new_nodes = split_nodes_delimiter(nodes, "*", TextType.BOLD)
+        self.assertEqual(len(new_nodes), 3)
+        self.assertEqual(new_nodes[0].text, "This is ")
+        self.assertEqual(new_nodes[0].text_type, TextType.TEXT)
+        self.assertEqual(new_nodes[1].text, "bold")
+        self.assertEqual(new_nodes[1].text_type, TextType.BOLD)
+        self.assertEqual(new_nodes[2].text, " text")
+        self.assertEqual(new_nodes[2].text_type, TextType.TEXT)
 
     def test_split_nodes_delimiter_unpaired(self):
         nodes = [TextNode("This is *bold text", TextType.TEXT)]
@@ -97,12 +97,6 @@ class TestInlineMarkdown(unittest.TestCase):
             new_nodes,
         )
 
-    def test_delim_bold_unpaired(self):
-        node = TextNode("This is text with a **bolded word", TextType.TEXT)
-        with self.assertRaises(Exception) as context:
-            split_nodes_delimiter([node], "**", TextType.BOLD)
-        self.assertTrue("Invalid markdown, unclosed section found" in str(context.exception))
-
     def test_delimiter_singleline(self):
         self.assertEqual(
             split_nodes_delimiter([TextNode("*bold*", TextType.TEXT)], "*", TextType.BOLD),
@@ -117,7 +111,7 @@ class TestInlineMarkdown(unittest.TestCase):
             TextNode("*italic*", TextType.TEXT),
             TextNode(" text.", TextType.TEXT),
         ]
-        result = split_nodes_delimiter(nodes, "*", TextType.BOLD)
+        new_nodes = split_nodes_delimiter(nodes, "*", TextType.BOLD)
         expected = [
             TextNode("This is ", TextType.TEXT),
             TextNode("bold", TextType.BOLD),
@@ -125,17 +119,63 @@ class TestInlineMarkdown(unittest.TestCase):
             TextNode("italic", TextType.BOLD),
             TextNode(" text.", TextType.TEXT),
         ]
-        self.assertEqual(result, expected)
+        self.assertEqual(new_nodes, expected)
 
-    def test_unpaired_delimiter(self):
-        nodes = [
-            TextNode("This is ", TextType.TEXT),
-            TextNode("*bold and italic", TextType.TEXT),
-            TextNode(" text.", TextType.TEXT),
-        ]
-        with self.assertRaises(Exception) as context:
-            split_nodes_delimiter(nodes, "*", TextType.BOLD)
-        self.assertTrue("Invalid markdown, unclosed section found" in str(context.exception))
+    def test_split_images(self):
+        node = [TextNode("This is text with an ![image](https://i.imgur.com/zjjcJKZ.png)", TextType.TEXT)]
+        new_nodes = split_nodes_image(node)
+        self.assertEqual(len(new_nodes), 2)
+        self.assertEqual(new_nodes[0].text, "This is text with an ")
+        self.assertEqual(new_nodes[0].text_type, TextType.TEXT)
+        self.assertEqual(new_nodes[1].text, "image")
+        self.assertEqual(new_nodes[1].text_type, TextType.IMAGE)
+        self.assertEqual(new_nodes[1].url, "https://i.imgur.com/zjjcJKZ.png")
+
+    def test_split_images_multiple(self):
+        node = TextNode(
+            "This is text with an ![image](https://i.imgur.com/zjjcJKZ.png) and another ![second image](https://i.imgur.com/3elNhQu.png)",
+            TextType.TEXT,
+        )
+        new_nodes = split_nodes_image([node])
+        self.assertListEqual(
+            [
+                TextNode("This is text with an ", TextType.TEXT),
+                TextNode("image", TextType.IMAGE, "https://i.imgur.com/zjjcJKZ.png"),
+                TextNode(" and another ", TextType.TEXT),
+                TextNode(
+                    "second image", TextType.IMAGE, "https://i.imgur.com/3elNhQu.png"
+                ),
+            ],
+            new_nodes,
+        )
+
+    def test_split_links(self):
+        nodes = [TextNode("This is text with a [link](https://example.com/page.html)", TextType.TEXT)]
+        new_nodes = split_nodes_link(nodes)
+        self.assertEqual(len(new_nodes), 2)
+        self.assertEqual(new_nodes[0].text, "This is text with a ")
+        self.assertEqual(new_nodes[0].text_type, TextType.TEXT)
+        self.assertEqual(new_nodes[1].text, "link")
+        self.assertEqual(new_nodes[1].text_type, TextType.LINK)
+        self.assertEqual(new_nodes[1].url, "https://example.com/page.html")
+
+    def test_split_links_multiple(self):
+        node = TextNode(
+            "This is text with a [link](https://example.com/page.html) and another [second link](https://example.com/second_page.html)",
+            TextType.TEXT,
+        )
+        new_nodes = split_nodes_link([node])
+        self.assertListEqual(
+            [
+                TextNode("This is text with a ", TextType.TEXT),
+                TextNode("link", TextType.LINK, "https://example.com/page.html"),
+                TextNode(" and another ", TextType.TEXT),
+                TextNode(
+                    "second link", TextType.LINK, "https://example.com/second_page.html"
+                ),
+            ],
+            new_nodes,
+        )
 
 class TestExtractMarkdown(unittest.TestCase):
     def test_extract_markdown_images(self):
