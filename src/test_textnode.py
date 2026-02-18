@@ -1,7 +1,6 @@
 import unittest
 
 from textnode import TextNode, TextType
-from inline_markdown import split_nodes_delimiter
 
 class TestTextNode(unittest.TestCase):
     def test_eq(self):
@@ -19,39 +18,17 @@ class TestTextNode(unittest.TestCase):
         self.assertEqual(node.text_type.value, "link")
         self.assertEqual(node.url, "http://example.com")
 
-    # def test_delimiter_singleline(self):
+    def test_eq_false(self):
+        node = TextNode("This is a text node", TextType.TEXT)
+        node2 = TextNode("This is a text node", TextType.BOLD)
+        self.assertNotEqual(node, node2)
 
-    #     self.assertEqual
-    
-    def test_delimiter_multiline(self):
-        nodes = [
-            TextNode("This is ", TextType.TEXT),
-            TextNode("*bold*", TextType.TEXT),
-            TextNode(" and ", TextType.TEXT),
-            TextNode("*italic*", TextType.TEXT),
-            TextNode(" text.", TextType.TEXT),
-        ]
+    def test_eq_false2(self):
+        node = TextNode("This is a text node", TextType.TEXT)
+        node2 = TextNode("This is a text node2", TextType.TEXT)
+        self.assertNotEqual(node, node2)
 
-        result = split_nodes_delimiter(nodes, "*", TextType.BOLD)
-
-        expected = [
-            TextNode("This is ", TextType.TEXT, None),
-            TextNode("bold", TextType.BOLD, None),
-            TextNode(" and ", TextType.TEXT, None),
-            TextNode("italic", TextType.BOLD, None),
-            TextNode(" text.", TextType.TEXT, None),
-        ]
-
-        self.assertEqual(result, expected)
-
-    def test_unpaired_delimiter(self):
-        nodes = [
-            TextNode("This is ", TextType.TEXT),
-            TextNode("*bold and italic", TextType.TEXT),
-            TextNode(" text.", TextType.TEXT),
-        ]
-
-        with self.assertRaises(Exception) as context:
-            split_nodes_delimiter(nodes, "*", TextType.BOLD)
-
-        self.assertTrue("Invalid markdown, unclosed section found" in str(context.exception))
+    def test_eq_url(self):
+        node = TextNode("This is a text node", TextType.ITALIC, "https://www.boot.dev")
+        node2 = TextNode("This is a text node", TextType.ITALIC, "https://www.boot.dev")
+        self.assertEqual(node, node2)

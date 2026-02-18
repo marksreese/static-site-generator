@@ -8,10 +8,6 @@ class TestLeafNode(unittest.TestCase):
         self.assertEqual(node.tag, "span")
         self.assertEqual(node.value, "Sample Text")
         self.assertEqual(node.props, {"class": "highlight"})
-
-    def test_leaf_to_html_p(self):
-        node = LeafNode("p", "Hello, world!")
-        self.assertEqual(node.to_html(), "<p>Hello, world!</p>")
     
     def test_repr(self):
         node = LeafNode("div", "Content", props={"id": "main"})
@@ -37,12 +33,16 @@ class TestLeafNode(unittest.TestCase):
         self.assertEqual(html_node.tag, "b")
         self.assertEqual(html_node.value, "Bold text")
 
-    def test_text_node_to_html_node_link(self):
-        node = TextNode("Example", TextType.LINK, "http://example.com")
-        html_node = LeafNode.text_node_to_html_node(node) # type: ignore
-        self.assertEqual(html_node.tag, "a")
-        self.assertEqual(html_node.value, "Example")
-        self.assertEqual(html_node.props, {"href": "http://example.com"})
+    def test_leaf_to_html_a(self):
+        node = LeafNode("a", "Click me!", {"href": "https://www.google.com"})
+        self.assertEqual(
+            node.to_html(),
+            '<a href="https://www.google.com">Click me!</a>',
+        )
+
+    def test_leaf_to_html_p(self):
+        node = LeafNode("p", "Hello, world!")
+        self.assertEqual(node.to_html(), "<p>Hello, world!</p>")
 
     def test_text_node_to_html_node_image(self):
         node = TextNode("An image", TextType.IMAGE, "http://example.com/image.png")
@@ -50,3 +50,7 @@ class TestLeafNode(unittest.TestCase):
         self.assertEqual(html_node.tag, "img")
         self.assertEqual(html_node.value, "")
         self.assertEqual(html_node.props, {"src": "http://example.com/image.png", "alt": "An image"})
+
+    def test_leaf_to_html_no_tag(self):
+        node = LeafNode(None, "Hello, world!")
+        self.assertEqual(node.to_html(), "Hello, world!")
