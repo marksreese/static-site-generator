@@ -54,7 +54,4 @@ class TestTextNode(unittest.TestCase):
         with self.assertRaises(Exception) as context:
             split_nodes_delimiter(nodes, "*", TextType.BOLD)
 
-        self.assertTrue("Unpaired delimiter found in nodes." in str(context.exception))
-
-if __name__ == "__main__":
-    unittest.main()
+        self.assertTrue("Invalid markdown, unclosed section found" in str(context.exception))
