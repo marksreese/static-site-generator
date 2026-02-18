@@ -93,3 +93,15 @@ def split_nodes_link(old_nodes):
             current_sublist.append(TextNode(remaining_text, TextType.TEXT))
         result.extend(current_sublist)
     return result
+
+# use split functions to convert text in a block to textnodes with correct types
+def text_to_textnodes(text: str):
+    result = []
+    initial_node = TextNode(text, TextType.TEXT)
+    result.append(initial_node)
+    result = split_nodes_image(result)
+    result = split_nodes_link(result)
+    result = split_nodes_delimiter(result, "**", TextType.BOLD)
+    result = split_nodes_delimiter(result, "_", TextType.ITALIC)
+    result = split_nodes_delimiter(result, "`", TextType.CODE)
+    return result
