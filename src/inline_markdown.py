@@ -1,7 +1,7 @@
 from textnode import TextNode, TextType
 import re
 
-def split_nodes_delimiter(old_nodes: list[TextNode], delimiter: str, text_type):
+def split_nodes_delimiter(old_nodes, delimiter: str, text_type):
     result = []
     for node in old_nodes:
         if node.text_type != TextType.TEXT:

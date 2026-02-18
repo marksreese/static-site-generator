@@ -26,7 +26,7 @@ class TestLeafNode(unittest.TestCase):
         self.assertEqual(node.to_html(), "<h1>Welcome</h1>")
 
     def test_text_node_to_html_node(self):
-        node = TextNode("This is a text node", TextType.PLAIN)
+        node = TextNode("This is a text node", TextType.TEXT)
         html_node = LeafNode.text_node_to_html_node(node) # type: ignore
         self.assertEqual(html_node.tag, "")
         self.assertEqual(html_node.value, "This is a text node")
