@@ -13,7 +13,7 @@ class TestHTMLNode(unittest.TestCase):
     
     def test_repr(self):
         node = HTMLNode(tag="p", value="Paragraph")
-        self.assertEqual(repr(node), "HTMLNode(tag=p, value=Paragraph, children=None, props=None)")
+        self.assertEqual(repr(node), "HTMLNode(p, Paragraph, children: None, None)")
 
     def test_props_to_html_with_props(self):
         node = HTMLNode(props={"a": "b", "c": "d"})

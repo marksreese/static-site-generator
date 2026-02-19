@@ -11,7 +11,7 @@ class TestLeafNode(unittest.TestCase):
     
     def test_repr(self):
         node = LeafNode("div", "Content", props={"id": "main"})
-        self.assertEqual(repr(node), "HTMLNode(tag=div, value=Content, children=None, props={'id': 'main'})")
+        self.assertEqual(repr(node), "LeafNode(div, Content, {'id': 'main'})")
 
     def test_leaf_to_html_with_props(self):
         node = LeafNode("a", "Click here", props={"href": "https://example.com", "target": "_blank"})
