@@ -1,6 +1,5 @@
 import unittest
-from parentnode import ParentNode
-from htmlnode import LeafNode
+from htmlnode import LeafNode, ParentNode
 
 class TestParentNode(unittest.TestCase):
     def test_to_html_with_children(self):
@@ -18,7 +17,7 @@ class TestParentNode(unittest.TestCase):
         )
 
     def test_to_html_without_children_raises_value_error(self):
-        parent_node = ParentNode("div", [])
+        parent_node = ParentNode("div", children=None) # type: ignore
         with self.assertRaises(ValueError) as context:
             parent_node.to_html()
         self.assertEqual(str(context.exception), "ParentNode must have children.")
@@ -37,12 +36,6 @@ class TestParentNode(unittest.TestCase):
             parent_node.to_html(),
             '<div id="container"><span class="highlight">child</span></div>',
         )
-
-    def test_empty_children_list_raises_value_error(self):
-        parent_node = ParentNode("div", [])
-        with self.assertRaises(ValueError) as context:
-            parent_node.to_html()
-        self.assertEqual(str(context.exception), "ParentNode must have children.")
 
     def test_to_html_many_children(self):
         node = ParentNode(
