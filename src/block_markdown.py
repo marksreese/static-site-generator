@@ -1,5 +1,5 @@
 from enum import Enum
-from htmlnode import HTMLNode, ParentNode
+from htmlnode import ParentNode
 from textnode import *
 from inline_markdown import text_to_textnodes
 import re
