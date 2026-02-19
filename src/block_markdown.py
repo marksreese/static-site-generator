@@ -84,12 +84,12 @@ def markdown_to_html_node(doc: str):
         tag = block_type_to_tag(block_type) # type: ignore
         if tag == "h":
             # count number of # symbols at the start of the block
-            num_hashes = len(block) - len(block.lstrip("#").lstrip())
+            num_hashes = len(block) - len(block.lstrip("#").lstrip()) - 1
             tag = f"h{num_hashes}"
         # create new child of <div></div>
         block_node = ParentNode(tag, []) # type: ignore
         node.children.append(block_node)
-        # set children
+        # set nested children
         if block_type != BlockType.CODE:
             block_node.children.extend(text_to_children(block, block_type)) # type: ignore
         else:
