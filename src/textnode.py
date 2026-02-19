@@ -9,9 +9,6 @@ class TextType(Enum):
     LINK = "link"
     IMAGE = "image"
 
-from htmlnode import HTMLNode
-from textnode import TextNode
-
 def text_node_to_html_node(text_node: 'TextNode'):
     type = text_node.text_type
     if type is None:
