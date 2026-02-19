@@ -1,5 +1,3 @@
-
-
 class HTMLNode:
     def __init__(self, tag: str = None, value: str = None, children: list = None, props: dict = None): # type: ignore
         self.tag = tag
@@ -22,3 +20,25 @@ class HTMLNode:
             html_string += f' {key}="{value}"'
         
         return html_string
+    
+class LeafNode(HTMLNode):
+    def __init__(self, tag, value: str, props: dict = None):  # type: ignore
+        super().__init__(tag=tag, value=value, children=None, props=props) # type: ignore
+
+    def to_html(self) -> str:
+        node_string = ""
+
+        if self.value == None:
+            raise ValueError()
+        
+        if self.tag is None:
+            return self.value
+        
+        node_string = self.props_to_html()
+        
+        if node_string == "":
+            node_string = f'<{self.tag}>{self.value}</{self.tag}>'
+        else:
+            node_string = f'<{self.tag}{node_string}>{self.value}</{self.tag}>'
+
+        return node_string
