@@ -1,6 +1,5 @@
 import unittest
 from block_markdown import *
-from htmlnode import LeafNode
 
 class TestBlockMarkdown(unittest.TestCase):
     def test_extract_blocks_from_markdown(self):
@@ -33,9 +32,7 @@ This is the same paragraph on a new line
 
     def test_paragraphs(self):
         md = """
-This is **bolded** paragraph
-text in a p
-tag here
+This is **bolded** paragraph text in a p tag here
 
 This is another paragraph with _italic_ text and `code` here
 
@@ -64,9 +61,10 @@ the **same** even with inline stuff
         )
 
     def test_quote(self):
-        md = """    > This is a quote
-with multiple lines
-and some **bold** text
+        md = """
+> This is a quote
+> with multiple lines
+> and some **bold** text
 """
 
         node = markdown_to_html_node(md)
@@ -77,7 +75,8 @@ and some **bold** text
         )
 
     def test_lists(self):
-        md = """- Item 1
+        md = """
+- Item 1
 - Item 2 with **bold** text
 - Item 3 with some _italic_ text
 1. First item
