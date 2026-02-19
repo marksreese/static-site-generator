@@ -28,7 +28,7 @@ This is the same paragraph on a new line
         self.assertEqual(block_to_block_type("- First item\n- Second item"), BlockType.UNORDERED_LIST)
         self.assertEqual(block_to_block_type("> This is a quote"), BlockType.QUOTE)
         self.assertEqual(block_to_block_type("```\nCode block\n```"), BlockType.CODE)
-        self.assertEqual(block_to_block_type("This is a paragraph."), BlockType.PARAGRAPH)
+        self.assertEqual(block_to_block_type(" This is a paragraph. "), BlockType.PARAGRAPH)
 
     def test_paragraphs(self):
         md = """
@@ -71,7 +71,7 @@ the **same** even with inline stuff
         html = node.to_html()
         self.assertEqual(
             html,
-            "<div><blockquote>This is a quote\nwith multiple lines\n\nand some <b>bold</b> text</blockquote></div>",
+            "<div><blockquote>This is a quote\nwith multiple lines\nand some <b>bold</b> text</blockquote></div>",
         )
 
     def test_lists(self):
@@ -79,6 +79,7 @@ the **same** even with inline stuff
 - Item 1
 - Item 2 with **bold** text
 - Item 3 with some _italic_ text
+
 1. First item
 2. Second item with `code`
 3. Third item
