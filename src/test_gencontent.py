@@ -1,5 +1,5 @@
 import unittest
-from file_markdown import extract_title
+from gencontent import extract_title
 
 class TestExtractTitle(unittest.TestCase):
     def test_eq(self):
