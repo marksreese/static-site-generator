@@ -1,6 +1,6 @@
 import unittest
 from block_markdown import *
-from leafnode import LeafNode
+from htmlnode import LeafNode
 
 class TestBlockMarkdown(unittest.TestCase):
     def test_extract_blocks_from_markdown(self):
