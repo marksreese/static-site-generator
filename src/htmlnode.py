@@ -34,11 +34,11 @@ class LeafNode(HTMLNode):
         if self.tag is None:
             return self.value
         
-        node_string = self.props_to_html()
+        props_string = self.props_to_html()
         
-        if node_string == "":
+        if props_string == "":
             node_string = f'<{self.tag}>{self.value}</{self.tag}>'
         else:
-            node_string = f'<{self.tag}{node_string}>{self.value}</{self.tag}>'
+            node_string = f'<{self.tag}{props_string}>{self.value}</{self.tag}>'
 
         return node_string
