@@ -3,7 +3,7 @@ from copystatic import copy_files_recursive
 from gencontent import generate_pages_recursive
 
 dir_path_static = "./static"
-dir_path_public = "./public"
+dir_path_public = "./docs" # by default, GitHub Pages serves sites from the "docs" directory of branch main
 dir_path_content = "./content"
 template_path = "./template.html"
 base_path = "/"
