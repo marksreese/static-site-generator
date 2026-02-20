@@ -1,44 +1,817 @@
-# Tolkien Fan Club
+# Cocktail Specs
 
-![JRR Tolkien sitting](/images/tolkien.png)
+## Spirit Categories
 
-Here's the deal, **I like Tolkien**.
+- [Whiskey (American)](/categories/whiskey)
+- [Whisky](/categories/whisky)
+- [Gin](/categories/gin)
+- [Rum](/categories/rum)
+- [Tequila & Mezcal](/categories/agave)
+- [Cognac & Brandy](/categories/brandy)
+- [Vodka](/categories/vodka)
+- [Split Bases](/categories/blends)
+- [Bitters/Liqueurs/Wines](/categories/bitters)
+- [Bubbly](/categories/bubbly)
+- [Served Warm](/categories/warmed)
+- [Desserts & Flips](/categories/dessert)
 
-> "I am in fact a Hobbit in all but size."
->
-> -- J.R.R. Tolkien
+# Favorite Cocktails
 
-## Blog posts
+## Classics
 
-- [Why Glorfindel is More Impressive than Legolas](/blog/glorfindel)
-- [Why Tom Bombadil Was a Mistake](/blog/tom)
-- [The Unparalleled Majesty of "The Lord of the Rings"](/blog/majesty)
+### Boulevardier
 
-## Reasons I like Tolkien
+- Stir
+- Rocks glass
+- Ice
+- 2 rye
+- 1 Cocchi di Torino
+- 1 Campari
+- Orange twist
 
-- You can spend years studying the legendarium and still not understand its depths
-- It can be enjoyed by children and adults alike
-- Disney _didn't ruin it_ (okay, but Amazon might have)
-- It created an entirely new genre of fantasy
+### Corpse Reviver #2
 
-## My favorite characters (in order)
+- Shake
+- Coupe
+- Rinse absinthe
+- 0.75 gin (Fords)
+- 0.75 Combier
+- 0.75 Kina L'Aero d'Or (or Lillet blanc)
+- 0.75 lemon
 
-1. Gandalf
-2. Bilbo
-3. Sam
-4. Glorfindel
-5. Galadriel
-6. Elrond
-7. Thorin
-8. Sauron
-9. Aragorn
+### Daiquiri
 
-Here's what `elflang` looks like (the perfect coding language):
+- Shake + fine strain
+- Coupe
+- 2 rum
+- 0.75 lime
+- 0.25 simple
+- Lime wheel
 
-```
-func main(){
-    fmt.Println("Aiya, Ambar!")
-}
-```
+### French 75
 
-Want to get in touch? [Contact me here](/contact).
+- Shake
+- Collins
+- 1 gin (Tanq)
+- 1 champagne (Savart l'Ouverture)
+- 0.5 lemon
+- 0.25 simple
+
+### Gimlet
+
+- Shake
+- Coupe
+- 2 gin
+- 0.75 lime
+- 0.25 simple
+- Lime twist
+
+### Hanky Panky
+
+- Stir
+- Coupe
+- 2 gin (Tanq)
+- 1.5 Cocchi di Torino
+- 0.25 Fernet Branca
+- Orange twist
+
+### Hemingway Daiquiri
+
+- Shake + blend
+- Coupe
+- Pebble ice
+- 3.5 white rum (Bacardi heritage)
+- 2 grapefruit
+- 1.5 maraschino
+- 1 lime
+- Lime wheel
+
+### Liberal
+
+- Stir
+- Coupe
+- 1.5 rye
+- 0.25 sweet vermouth
+- 0.25 China China
+- 2 aromatic
+- Orange twist
+
+### Mai Tai
+
+- Shake
+- Rocks glass
+- Cracked ice
+- 1 white rhum (Clement Premiere Canne)
+- 1 rum (Appleton Reserve)
+- 0.75 lime
+- 0.75 orgeat (Small Hand Foods)
+- 0.5 Pierre Ferrand curacao
+- Mint sprig
+
+### Manhattan
+
+- Stir
+- Coupe
+- 2 bourbon
+- 1 sweet vermouth (Rosso)
+- 2 Angostura
+- Brandied cherries
+
+### Margarita
+
+- Shake + fine strain
+- Coupe
+- 2 blanco (Tesoro Platinum)
+- 0.75 Combier
+- 0.75 lime
+- 0.25 agave
+- Lime wedge
+
+### Negroni
+
+- Stir
+- Rocks glass
+- Ice
+- 1.5 (or 2, you dog) gin
+- 1 Campari
+- 1 sweet vermouth (Rosso)
+- Orange twist
+
+### Old Friend
+
+- Shake
+- Coupe
+- 1.5 gin (Beefeater)
+- 0.75 grapefruit
+- 0.5 Campari
+- 0.25 St Germain
+- Lemon twist or coin
+
+### Old-Fashioned
+
+- Stir
+- Rocks glass
+- Ice
+- 2 rye
+- Barspoon simple
+- 2 Angostura
+- Lemon twist
+- Orange twist
+
+### Old Pal
+
+- Stir
+- Coupe
+- 1.5 bourbon
+- 0.75 Campari
+- 0.75 dry vermouth
+
+### Pisco Sour
+
+- Dry shake + fine strain
+- Coupe
+- 2 pisco (La Diablada)
+- 0.75 lime
+- 0.25 simple
+- 1 white
+- Dozen Angostura
+
+### Ramos Gin Fizz
+
+- Dry shake
+- Collins
+- 1.5 soda
+- 2 gin (Beefeater)
+- 0.75 cream
+- 0.5 lime
+- 0.5 lemon
+- 0.25 simple
+- 5 orange blossom
+- 1 white
+
+### Rum Old Fashioned (Johnson)
+
+- Stir
+- Rocks glass
+- Ice
+- Orange peel
+- 1.5 Barbados rum (Mount Gay XO)
+- 0.5 overproof Guyanese (Hamilton 151)
+- Barspoon Smith & Cross
+- Barspoon simple
+- 1 Angostura
+- 1 Elemakule
+- Lime coin
+
+### Sazerac
+
+- Stir
+- Rocks glass
+- Rinse absinthe
+- 2 Cognac (or Sazerac rye)
+- Barspoon simple
+- 3 Peychaud's
+- 2 Angostura
+- Express lemon
+
+### Sidecar
+
+- Shake + fine strain
+- Coupe
+- 2 VSOP (Remy Martin)
+- 0.75 lemon
+- 0.5 Combier
+- Barspoon simple
+
+### Toronto
+
+- Stir
+- Coupe
+- 2 rye (Lot 40)
+- 0.25 Fernet Branca
+- 0.25 Demerara
+- 2 Angostura
+- Orange twist flamed (or lemon)
+
+### Whiskey Sour (Alicia Perry)
+
+- Dry shake + shake
+- Rocks glass
+- 1 bourbon (Elijah Craig)
+- 1 rye
+- 0.75 lemon
+- 0.25 simple
+- 1 white
+- Express lemon
+- Spray angostura
+
+
+
+## Originals
+
+### Agricole Rhum Punch (Phan)
+
+- Shake
+- Rocks glass
+- Crushed ice
+- 2 agricole (Neisson or La Favorite)
+- 1 lime
+- 0.5 simple
+- Barspoon allspice dram
+- Nutmeg
+- Orange slice
+
+### Almond Negroni (Union Sq Café)
+
+- Stir
+- Rocks glass
+- Ice
+- 1.5 grappa (Nardini)
+- 1 Cocchi Rosa
+- 0.5 China-China
+- 0.25 Becherovka
+- 0.25 Suze
+- Orange twist
+
+### Armada (Marrero)
+
+- Stir
+- Coupe
+- 1.5 Campari
+- 1 cream sherry (Hidalgo Alameda)
+- 0.75 mezcal (Los Danzantes)
+- Grapefruit twist
+
+### Bananavardier
+
+- Stir
+- Rocks glass
+- Ice
+- 1.25 bourbon
+- 1 Campari
+- 0.5 Carpano Antica
+- 0.25 banana
+- Freeze-dried banana
+
+### Banana Shadow (Wiseman)
+
+- Stir
+- Coupe
+- 2 rum
+- 0.75 Palo Cortado (or East India)
+- 0.5 banana
+- 1 cardamom
+- Dried lime wheel
+
+### Banana Bliss (Laman)
+
+- Stir
+- Rocks glass
+- Ice
+- 1 cognac (Pierre Ferrand 1840)
+- 0.75 oloroso (Cruz del Mar)
+- 0.25 banana (TF)
+- Orange twist
+
+### Banana Man-hattan
+
+- Stir
+- Rocks glass
+- Rinse Pernod (2 dash/8 spray)
+- 2 rum
+- 0.5 Punt e Mes (or coffee-infused)
+- 0.25 banana (Giffard)
+- Lemon twist
+
+### Blessed Thistle (A16 Rockridge)
+
+- Stir
+- 1.25 gin (Plymouth)
+- 1 Campari
+- 0.25 CioCiaro
+- 0.25 Cardamaro (or Bonal)
+- Orange wheel
+
+### Boo Radley (French 75)
+
+- Stir
+- Coupe/rocks
+- 2 bourbon
+- 0.75 Cynar
+- 0.5 Heering
+- Lemon twist
+- Orange twist
+
+### Campari Shakerato (Dante)
+
+- Shake
+- N&N
+- 2.5 Campari
+- 5 drops 1:2 saline
+- 2 drops orange blossom
+- Orange twist
+
+### Carroll Gardens (Simo)
+
+- Stir
+- Coupe
+- 2 rye (Rittenhouse)
+- 0.5 Punt e Mes
+- 0.5 Nardini
+- Barspoon Luxardo
+- Lemon twist
+
+### Chapulin (Manifesto)
+
+- Stir
+- Rocks glass
+- Ice
+- 1 Branca Menta
+- 1 tequila (Ocho Plata)
+- 0.5 cacao (TF)
+- 3 mole
+- Float absinthe
+
+### China Fight
+
+- Shake + fine strain
+- Coupe
+- 1.5 cognac
+- 0.75 China China
+- 0.25 St Germain
+- Orange twist
+
+### The Coffee House (Boccato)
+
+- Stir
+- Rocks glass
+- Ice
+- 1.75 rye (Redemption)
+- 0.5 coffee (Varnelli Moka)
+- 2 orange
+- Orange twist
+
+### Colonial Ties (Alperin)
+
+- Stir
+- Rocks glass
+- 1 rye
+- 1 Jamaican rum
+- Barspoon demerara
+- Barspoon Perrier
+- 2 orange
+- Lemon twist
+
+### The Cutter (Ticonderoga)
+
+- Shake
+- Coupe
+- 1.25 whiskey (St George B&E)
+- 0.75 Campari
+- 0.75 lemon
+- 0.5 CioCiaro
+
+### Don Lockwood (Dutch Kills)
+- Stir
+- Rocks glass
+- Ice
+- 1 Islay
+- 1 bourbon
+- 0.25 maple
+- 1 Angostura
+- 2 chocolate
+
+### Dunhill (Baiocchi)
+
+- Stir
+- Rocks glass
+- Ice
+- Rinse absinthe
+- 1 Beefeater
+- 1 Lustau East India (oloroso/PX)
+- 1 Dolin dry
+- 0.25 Pierre Ferrand curacao
+- Lemon peel
+
+### East India Negroni (Meehan)
+
+- Stir
+- Rocks glass
+- Ice
+- 2 rum (Banks)
+- 0.75 Solera sherry (Lustau)
+- 0.75 Campari
+- Orange twist
+
+### Eeyore's Requiem (Maloney)
+
+- Stir
+- Coupe
+- 1.5 Campari
+- 1 Dolin blanc
+- 0.5 gin
+- 0.25 Cynar
+- 0.25 Fernet Branca
+- 2 Regan's
+- Orange twist
+
+### Espresso Mexicano (Yarm)
+
+- Shake
+- Coupe
+- 2 tequila
+- 1 espresso
+- 0.5 Averna
+- 0.5 cinammon syrup
+- Barspoon simple
+- 1 mole
+- 3 beans
+
+### Fay Wray (Belanger)
+
+- Shake
+- Rocks glass
+- Crushed ice
+- 0.75 gold rum (Barbancourt 4)
+- 0.75 cognac (Dudugnon)
+- 0.75 banana
+- 0.75 lime
+- Lime wedge
+- 0.25 rhum agricole (Clement)
+- 0.25 demerara
+- Dried banana
+- Mint sprig
+
+### Fumata Bianca
+
+- Stir
+- Collins
+- Ice
+- 1 Carpano bianco
+- 1 Suze
+- 0.5 mezcal (Del Maguey Vida)
+- Top soda
+- Grapefruit twist
+
+### Grand Street (Death & Co)
+
+- Stir + fine strain
+- Coupe
+- Muddled grapefruit peel
+- 2 gin (Beefeater)
+- 0.75 Punt e Mes
+- 0.25 Cynar
+- Barspoon maraschino
+
+### Guillotine (Kehagiaras)
+
+- Stir
+- Coupe
+- 1.5 mezcal (Vida)
+- 1 Cynar
+- 0.5 dry vermouth (Dolin)
+
+### Jabberwocky (15 Romolo)
+
+- Stir
+- Coupe
+- 0.75 gin
+- 0.75 manzanilla
+- 0.75 Lillet Blanc
+- 2 orange
+- Lemon twist
+
+### Jitney (Robitschek)
+
+- Stir
+- Rocks glass
+- Ice
+- 0.75 mezcal
+- 0.75 Campari
+- 0.5 coffee-infused dry vermouth
+- 0.5 bianco vermouth
+- 2 absinthe
+- Grapefruit twist
+
+### Jungle (Chantal Tseng)
+
+- Stir
+- Coupe
+- 1 gin (Jensen's)
+- 1 fino (Valespino)
+- 1 sweet vermouth (Dolin)
+- Orange peel
+- Thyme sprig
+
+### Kingston Negroni (Simo)
+
+- Stir
+- Rocks glass
+- Ice
+- 1 Smith & Cross
+- 1 Campari
+- 1 sweet vermouth (Punt e Mes)
+- Orange twist
+
+### Latin Trifecta (Boudreau)
+
+- Stir
+- Nick & Nora
+- 1 tequila
+- 1 Cynar
+- 0.5 dry sherry (oloroso)
+- 3 orange
+- Flamed orange
+
+### Little Italy (Saunders, Pegu Club)
+
+- Stir
+- Coupe
+- 2 rye (Rittenhouse)
+- 0.75 vermouth (Rosso)
+- 0.5 Cynar
+- 3 cherries
+
+### Long Look Back (Lambert)
+
+- Stir
+- Rocks glass
+- Ice
+- 1 rye (Woody Creek)
+- 0.75 Toki
+- 0.75 Braulio
+- 0.25 demerara
+- 3 Angostura
+- Orange peel
+
+### Matador (Harry's)
+
+- Stir
+- 2 reposado (Celestial)
+- 0.75 blanc (Dolin)
+- 0.25 Gran Marnier
+- 3 orange
+- Express grapefruit
+- Dried lemon wheel
+
+### Mezcal Negroni
+
+- Stir
+- Rocks glass
+- Ice
+- 2 mezcal
+- 1 Cynar
+- 1 Campari
+
+### Midnight Marauder (Simo)
+
+- Stir
+- Coupe
+- 1 Del Maguey Vida
+- 1 Bonal
+- 1 Cynar
+- 1 mole
+
+### Midnight Stinger
+
+- Shake
+- Rocks glass
+- Cracked ice
+- 1 bourbon
+- 1 Branca
+- 0.75 lemon
+- 0.25 + barspoon simple
+- Mint sprig
+
+### The Memory Remains (Alden & Harlow)
+
+- Stir
+- Rocks glass
+- Ice
+- 1 rye
+- 1 Suze
+- 1 Carpano Antica
+- Barspoon curacao (coffee + cacao infused)
+
+
+### Natoma St (Trick Dog)
+
+- Stir
+- Rocks glass
+- Ice
+- 1 amontillado (Napoleon)
+- 1 Gran Classico
+- 1 Dolin dry
+- Lemon twist
+
+
+### Platanos en Mole Old Fashioned (Meehan)
+
+- Stir
+- Rocks glass
+- Ice
+- 2 rum (Zacapa 23)
+- 0.25 banana
+- 2 mole
+- Chili powder
+
+### Remember the Alimony
+
+- Shake
+- Rocks glass
+- Ice
+- 1.25 Fino (Manzanilla)
+- 1.25 Cynar
+- 0.75 gin (Beefeater)
+- Orange twist
+
+### Rosita
+
+- Stir
+- Rocks glass
+- Ice
+- 1.5 smoked tequila (or mezcal)
+- 0.5 Punt e Mes
+- 0.5 dry vermouth (Dolin)
+- 0.5 Campari (or Aperol)
+- Orange twist (or orange wheel)
+
+### Rum River Mystic (Lost Lake)
+
+- Stir
+- Rocks glass
+- Ice
+- 1 aged rum (Cana 7)
+- 1 rye (Pikesville)
+- 0.75 Byrrh
+- 0.25 Benedictine
+- 2 Angostura
+- Express orange
+- 4 drops Elemakule
+
+### San Miguel (Meehan)
+
+- Stir
+- Rocks glass
+- Ice
+- Express grapefruit
+- 2 blanco (Casa Dragones)
+- Barspoon agave
+- 2 celery
+
+### Session Margarita (Lazor)
+
+- Shake
+- Rocks glass
+- Ice
+- 1.5 manzanilla
+- 0.75 tequila (or mezcal)
+- 0.75 lime
+- 0.75 Combier
+- 0.25 agave syrup
+- Saline
+- Lime wheel
+
+### Sharon (Lazor)
+
+- Stir
+- N&N
+- 1.5 manzanilla
+- 1 Carpano Antica
+- 0.75 Campari
+- Express orange
+
+### Sin Cyn (Dellevigne)
+
+- Stir
+- Rocks glass
+- Ice
+- 1.25 scotch (Macallan)
+- 1 Cynar
+- 1 sweet vermouth (Carpano Antica)
+- Orange peel?
+
+### Squeaky Wheel (Bennett)
+
+### Vancouver (Boudreau)
+
+- Stir
+- Coupe
+- 1.5 gin
+- 0.75 sweet vermouth
+- 0.25 Benedictine
+- 2 orange
+
+- Stir
+- Rocks glass
+- Ice
+- 1 mezcal
+- 1 Campari
+- 0.75 coffee
+- 0.25 amaretto
+- 2 Angostura
+- Orange twist
+- Lemon twist
+
+### Thou Shall Not Be Named (Perry)
+
+- Stir
+- Rocks glass
+- Ice
+- 1.5 reposado (El Tesoro)
+- 0..5 mezcal (Vida)
+- 0.5 Sfumato
+- 0.5 sweet vermouth (di Torino)
+- Lemon twist
+
+### Wildest Redhead (Meaghan Dorman)
+
+- Shake
+- Rocks glass
+- Ice
+- 1.5 blended scotch
+- 0.75 lemon
+- 0.5 3:1 honey
+- 0.25 allspice
+- Sink 0.25 Heering
+
+### Winter Waltz (Hannah)
+
+- Shake
+- Coupe
+- 1 rye
+- 1 Laird's
+- 0.5 Averna (prefer Gabriello)
+- 0.25 allspice (St Elizabeth)
+- 2 allspice bitters (DeGroff's)
+- Star anise
+
+### White Negroni (Gracias Madre)
+
+- Stir
+- Rocks glass
+- Ice
+- 0.75 gin
+- 0.75 mezcal
+- 0.75 Salers
+- 0.75 blanc vermouth (Dolin)
+- Grapefruit twist
+
+### Yesterday, Today, Amaro (Kane)
+
+- Stir
+- Coupe
+- 2 rye (Wild Turkey 101)
+- 0.5 Cynar
+- 0.25 Averna
+- 0.25 Benedictine
+
+- Stir
+- Rocks glass
+- Ice
+- 1 bourbon
+- 1 Islay
+- 0.25 maple
+- 2 chocolate
+- 1 ango
+- Express lemon
