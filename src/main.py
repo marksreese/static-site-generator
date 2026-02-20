@@ -10,8 +10,8 @@ template_path = "./template.html"
 
 def main():
     base_path = "/"
-    if sys.argv[0]:
-        base_path = sys.argv[0]
+    if len(sys.argv) > 1:
+        base_path = sys.argv[1]
     
     print("Clearing files in public directory...")
     if os.path.exists(dir_path_public):
