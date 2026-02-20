@@ -10,8 +10,7 @@ template_path = "./template.html"
 
 def main():
     base_path = "/"
-    if sys.argv[0] != "src/main.py":
-        print(sys.argv[0])
+    if sys.argv[0]:
         base_path = sys.argv[0]
     
     print("Clearing files in public directory...")
