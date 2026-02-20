@@ -11,7 +11,6 @@
 - 2 champagne
 - Lemon wheel
 
-
 ### Skinned Knee
 
 - Shake
@@ -22,7 +21,6 @@
 - 0.5 Heering
 - 0.5 lemon
 - Orange twist
-
 
 ### Cat's Paw (Castro)
 

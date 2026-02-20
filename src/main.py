@@ -1,4 +1,4 @@
-from email.mime import base
+
 import os, sys, shutil
 from copystatic import copy_files_recursive
 from gencontent import generate_pages_recursive
@@ -10,6 +10,8 @@ template_path = "./template.html"
 
 def main():
     base_path = "/"
+    # if a CLI argument is provided, it is the name of the repo in Github Pages (e.g. "my-repo-name")
+    # sys.argv[0] is the name of the script
     if len(sys.argv) > 1:
         base_path = sys.argv[1]
     
