@@ -1,5 +1,62 @@
 # Whisky Cocktails
 
+## Classics
+
+### Highball
+
+- Stir
+- Collins
+- Ice
+- 2 whisky (Yamazaki 12)
+- 3 soda
+
+### Blood and Sand
+
+- Shake + fine strain
+- Coupe
+- 1.5 blended scotch
+- 0.75 oj
+- 0.5 Carpano Antica Formula
+- 0.5 Heering
+
+### Irish Coffee
+
+- Tempered mug
+- 4 coffee
+- 1.5 Irish (Redbreast 12)
+- 0.25 simple
+- Cream (whipped)
+- Nutmeg
+
+### Bobby Burns
+
+- Stir
+- Coupe
+- 2 blended scotch
+- 0.75 sweet vermouth (Rosso)
+- 0.25 Benedictine
+
+### Cameron's Kick
+
+- Shake + fine strain
+- Coupe
+- 1 blended scotch
+- 1 Irish
+- 0.75 lemon
+- 0.5 orgeat
+
+### Mamma Guidara's Godfather (NoMad)
+
+- Stir
+- Rocks
+- Ice
+- 1 Irish (Bushmill's)
+- 0.75 amaretto
+- 0.5 Jameson Black
+- 0.5 Scotch (Laphroaig 10)
+- 2 Angostura
+
+
 ## Originals
 
 ### Rosy Cheeks (Meehan)
@@ -134,59 +191,3 @@
 - 0.5 3:1 honey
 - 0.25 allspice
 - Sink 0.25 Heering
-
-## Classics
-
-### Highball
-
-- Stir
-- Collins
-- Ice
-- 2 whisky (Yamazaki 12)
-- 3 soda
-
-### Blood and Sand
-
-- Shake + fine strain
-- Coupe
-- 1.5 blended scotch
-- 0.75 oj
-- 0.5 Carpano Antica Formula
-- 0.5 Heering
-
-### Irish Coffee
-
-- Tempered mug
-- 4 coffee
-- 1.5 Irish (Redbreast 12)
-- 0.25 simple
-- Cream (whipped)
-- Nutmeg
-
-### Bobby Burns
-
-- Stir
-- Coupe
-- 2 blended scotch
-- 0.75 sweet vermouth (Rosso)
-- 0.25 Benedictine
-
-### Cameron's Kick
-
-- Shake + fine strain
-- Coupe
-- 1 blended scotch
-- 1 Irish
-- 0.75 lemon
-- 0.5 orgeat
-
-### Mamma Guidara's Godfather (NoMad)
-
-- Stir
-- Rocks
-- Ice
-- 1 Irish (Bushmill's)
-- 0.75 amaretto
-- 0.5 Jameson Black
-- 0.5 Scotch (Laphroaig 10)
-- 2 Angostura

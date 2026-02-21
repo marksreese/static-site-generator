@@ -10,7 +10,7 @@ def split_nodes_delimiter(old_nodes, delimiter: str, text_type):
         current_sublist = []
         sections = node.text.split(delimiter)
         if len(sections) % 2 == 0:
-            raise Exception("Invalid markdown, unclosed section found")
+            raise Exception(f"Invalid markdown, unclosed section found: \"{node.text}\"")
         for i in range(len(sections)):
             if sections[i] == "":
                 continue

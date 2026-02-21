@@ -345,9 +345,33 @@
 
 ### Beauregard's Breakfast (Boudreau)
 
+- Shake + fine strain
+- N&N
+- 1.5 bourbon
+- 1 lemon
+- 0.5 Montenegro
+- 0.25 blueberry preserves
+- 2 angostura
+
 ### Smoking Monkey (Boudreau)
 
+- Shake
+- N&N
+- Spray Islay
+- 1.5 banana-infused Jameson (1 banana: 250ml, blended + strained)
+- 0.5 PX sherry
+- 3 angostura
+
 ### The Hooker (Boudreau)
+
+- Shake
+- Coupe
+- 1 bourbon
+- 0.5 Averna
+- 0.25 Islay (Ardbeg)
+- Barspoon rich simple
+- 1 white
+- Top 2 Maudite (Belgian strong dark ale)
 
 ### Union Club (Boudreau)
 
