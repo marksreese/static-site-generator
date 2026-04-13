@@ -151,6 +151,19 @@
 
 ## Originals
 
+### Day-O' Fashioned (Bird of Paradise)
+
+- Stir
+- Rocks glass
+- Ice
+- 0.75 rye (Rittenhouse BIB)
+- 0.75 rum (Worthy Park 109)
+- 0.25 Giffard Banane
+- Barspoon cold brew
+- 2 Angostura
+- Muddled orange
+- Cherry
+
 ### Midnight Stinger
 
 - Shake
